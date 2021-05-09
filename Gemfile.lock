@@ -280,6 +280,7 @@ DEPENDENCIES
   pg (>= 0.18, < 2.0)
   puma (~> 3.12)
   rails (~> 5.2.4)
+  rexml
   rspec
   rspec-rails
   rubocop
