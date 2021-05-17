@@ -1,5 +1,18 @@
 <section class="user-section">
   <h2><%= "Name: #{@user.name}" %></h2>
+  <%= friendship_flag(@user) %>
+  <span class= "profile-link"> <%= invitation_btn(@user) %></span>
+  <% if current_user==@user %>
+    <div>
+      <span>Pending friend request(s): <%=@user.friend_requests.count %></span>
+      <%@user.friend_requests.each do |friendship|%>
+        <p>
+          <%=friendship.name%>:
+          <%= accept_friendship(friendship)%>  <%= reject_friendship(friendship)%>
+        </p>
+      <% end %>
+    </div>
+  <% end %>
   <article class="timeline">
     <h3>Recent posts:</h3>
     <ul class="posts">
