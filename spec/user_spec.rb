@@ -27,5 +27,11 @@ RSpec.describe User, type: :model do
 
       expect(testuser1.pending_friends.size).to eq(1)
     end
+    it 'User can reject friend requests' do
+      testuser1.friendships.create(friend_id: testuser2.id)
+      testuser2.reject_friend(testuser1)
+
+      expect(testuser1.friend?(testuser2)).to eq(false)
+    end
   end
 end
