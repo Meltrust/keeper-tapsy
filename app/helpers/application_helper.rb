@@ -32,14 +32,16 @@ module ApplicationHelper
     show_user = User.find_by(id: params[:id])
     (return unless current_user == show_user)
 
-    link_to('Accept?', user_friendship_path(user_id: friendship.id), method: :put, class: 'profile-link')
+    # link_to('Accept?', user_friendship_path(user_id: friendship.id), method: :put, class: 'profile-link')
+    link_to('Accept?', user_friendship_path(user_id: friendship.user.id), method: :put, class: 'profile-link')
   end
 
   def reject_friendship(friendship)
     show_user = User.find_by(id: params[:id])
     (return unless current_user == show_user)
 
-    link_to('Reject?', user_friendship_path(user_id: friendship.id), method: :delete, class: 'profile-link')
+    # link_to('Reject?', user_friendship_path(user_id: friendship.id), method: :delete, class: 'profile-link')
+    link_to('Reject?', user_friendship_path(user_id: friendship.user.id), method: :delete, class: 'profile-link')
   end
 
   def friendship_flag(user)
