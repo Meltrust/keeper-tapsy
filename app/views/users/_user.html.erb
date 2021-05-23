@@ -1,6 +1,7 @@
 <li>
-  Name: <%= user.name %>
+  Name: <%= friendship_flag_index(user) %>
   <span class="profile-link">
     <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
+    <%= invitation_btn(user) %>
   </span>
 </li>
