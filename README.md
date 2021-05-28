@@ -4,7 +4,7 @@
 
 ## Built With
 
-- Ruby v2.7.2
+- Ruby v2.7.3
 - Ruby on Rails v6.1
 
 ## Live Demo
@@ -18,9 +18,9 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-Ruby: 2.6.3
-Rails: 5.2.3
-Postgres: >=9.5
+Ruby: 2.7.3
+Rails: 6.1
+Postgres: >=12
 
 ### Setup
 
