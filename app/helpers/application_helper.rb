@@ -33,7 +33,7 @@ module ApplicationHelper
     (return unless current_user == show_user)
 
     # link_to('Accept?', user_friendship_path(user_id: friendship.id), method: :put, class: 'profile-link')
-    link_to('Accept?', user_friendship_path(user_id: friendship.user.id), method: :put, class: 'profile-link')
+    link_to('Accept friend request?', user_friendship_path(user_id: friendship.user.id), method: :put, class: 'profile-link')
   end
 
   def reject_friendship(friendship)

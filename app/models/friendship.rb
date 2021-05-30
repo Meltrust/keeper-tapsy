@@ -1,7 +1,6 @@
 class Friendship < ActiveRecord::Base
   after_initialize :set_defaults, unless: :persisted?
-  after_create :create_inverse, if: :inverse_record_nil?
-  after_update :update_inverse
+  after_update :create_inverse, if: :inverse_record_nil?
   after_destroy :destroy_inverse
 
   belongs_to :user
