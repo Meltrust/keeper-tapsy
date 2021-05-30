@@ -11,7 +11,6 @@ class Friendship < ActiveRecord::Base
   end
 
   def create_inverse
-    # Friendship.create(user: user, friend: friend, confirmed: nil)
     Friendship.create(user: friend, friend: user, confirmed: confirmed)
   end
 

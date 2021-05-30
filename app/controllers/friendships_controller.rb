@@ -11,13 +11,14 @@ class FriendshipsController < ApplicationController
 
   def update
     # friend = User.find(params[:user_id])
-    friend = User.find_by(id: params[:user_id])
+    friend = User.find(params[:user_id])
     current_user.confirm_friend(friend)
     redirect_to user_path, notice: "#{friend.name} is your friend now!"
   end
 
   def destroy
-    friend = User.find_by(id: params[:user_id])
+    friendship = Friendship.find(params[:id])
+    friend = friendship.user
     current_user.reject_friend(friend)
     redirect_to user_path, notice: "Your rejected #{friend.name}'s friend request."
   end
