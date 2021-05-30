@@ -1,9 +1,16 @@
 # Stay in touch
 
-> A mini social media app built with Ruby and Rails.
+> A mini social media app built with Ruby and Rails using Models, Views and Controlers.
+
+### Login screen 
 
 ![SCREENSHOT](docs/stay-in-touch.jpg)
+
+### User status
 ![SCREENSHOT](docs/screenshot-show.jpg)
+
+### User timeline with friends
+
 ![SCREENSHOT](docs/screenshot-timeline.jpg)
 
 ## Built With
