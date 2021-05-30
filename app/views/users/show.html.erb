@@ -7,7 +7,7 @@
       <span>Pending friend request(s): <%=@user.friend_requests.count %></span>
       <%@user.friend_requests.each do |friendship|%>
         <p>
-          <%=friendship.name%>:
+          <%=friendship.user.name%>:
           <%= accept_friendship(friendship)%>  <%= reject_friendship(friendship)%>
         </p>
       <% end %>

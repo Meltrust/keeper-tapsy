@@ -16,30 +16,48 @@ module ApplicationHelper
     end
   end
 
+  def current_user_or_friend?(user)
+    current_user == user || current_user.friend?(user)
+  end
+
   def invitation_btn(user)
-    return unless current_user != user
+    return if current_user_or_friend?(user)
 
-    return if current_user.friend?(user)
-
-    if current_user.pending_friends.include?(user)
+    if user.pending_friendship?(current_user)
       'Invite pending'
     else
-      link_to('Add Friend?', user_friendships_path(user_id: user.id), method: :post, class: 'profile-link')
+      unless current_user.pending_friendship?(user)
+        link_to('Add Friend?', user_friendships_path(user_id: user.id), method: :post, class: 'profile-link')
+      end
     end
   end
 
-  def accept_friendship(friendship)
-    show_user = User.find_by(id: params[:id])
-    (return unless current_user == show_user)
+  def accept_friendship_with_user(user)
+    return if current_user_or_friend?(user)
+    return unless current_user.pending_friendship?(user)
 
-    link_to('Accept?', user_friendship_path(user_id: friendship.id), method: :put, class: 'profile-link')
+    friendship = current_user.pending_friendship(user)
+    link_to('Accept', user_friendship_path(friendship.user, friendship.id), method: :put, class: 'profile-link')
+  end
+
+  def reject_friendship_with_user(user)
+    return if current_user_or_friend?(user)
+    return unless current_user.pending_friendship?(user)
+
+    friendship = current_user.pending_friendship(user)
+    link_to('Reject', user_friendship_path(friendship.user, friendship.id), method: :delete, class: 'profile-link')
+  end
+
+  def accept_friendship(friendship)
+    (return unless current_user == @user)
+
+    link_to('Accept', user_friendship_path(friendship.user, friendship.id), method: :put, class: 'profile-link')
   end
 
   def reject_friendship(friendship)
-    show_user = User.find_by(id: params[:id])
-    (return unless current_user == show_user)
+    (return unless current_user == @user)
 
-    link_to('Reject?', user_friendship_path(user_id: friendship.id), method: :delete, class: 'profile-link')
+    link_to('Reject', user_friendship_path(friendship.user, friendship.id), method: :delete, class: 'profile-link')
   end
 
   def friendship_flag(user)

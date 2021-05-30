@@ -3,5 +3,6 @@
   <span class="profile-link">
     <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
     <%= invitation_btn(user) %>
+    <%= accept_friendship_with_user(user) %> <%= reject_friendship_with_user(user) %>
   </span>
 </li>
