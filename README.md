@@ -1,11 +1,22 @@
-# Scaffold for social media app with Ruby on Rails
+# Stay in touch
 
-> This repo includes intial code for social media app with basic styling. Its purpose is to be a starting point for Microverse students.
+> A mini social media app built with Ruby and Rails using Models, Views and Controlers.
+
+### Login screen 
+
+![SCREENSHOT](docs/stay-in-touch.jpg)
+
+### User status
+![SCREENSHOT](docs/screenshot-show.jpg)
+
+### User timeline with friends
+
+![SCREENSHOT](docs/screenshot-timeline.jpg)
 
 ## Built With
 
-- Ruby v2.7.0
-- Ruby on Rails v5.2.4
+- Ruby v2.7.3
+- Ruby on Rails v6.1
 
 ## Live Demo
 
@@ -18,9 +29,9 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-Ruby: 2.6.3
-Rails: 5.2.3
-Postgres: >=9.5
+Ruby: 2.7.3
+Rails: 6.1
+Postgres: >=12
 
 ### Setup
 
@@ -37,14 +48,6 @@ Setup database with:
    rails db:migrate
 ```
 
-### Github Actions
-
-To make sure the linters' checks using Github Actions work properly, you should follow the next steps:
-
-1. On your recently forked repo, enable the GitHub Actions in the Actions tab.
-2. Create the `feature/branch` and push.
-3. Start working on your milestone as usual.
-4. Open a PR from the `feature/branch` when your work is done.
 
 
 ### Usage
@@ -60,34 +63,30 @@ Open `http://localhost:3000/` in your browser.
 ### Run tests
 
 ```
-    rpsec --format documentation
+    rspec --format documentation
 ```
 
-> Tests will be added by Microverse students. There are no tests for initial features in order to make sure that students write all tests from scratch.
-
-### Deployment
-
-TBA
 
 ## Authors
 
-TBA
+🧑‍💻 **Miguel**
+- GitHub: [@meltrust](https://github.com/meltrust)
+- Twitter: [@meltrustDVX](https://twitter.com/meltrustDVX)
+- LinkedIn: [Miguel(meltrust) Tapia Escalera](https://www.linkedin.com/in/meltrust/)
 
 ## 🤝 Contributing
-
-Contributions, issues and feature requests are welcome!
-
-Feel free to check the [issues page](issues/).
+Contributions, issues, and feature requests are welcome!
 
 ## Show your support
-
 Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-TBA
+- [Micoverse team](https://www.microverse.org/)
+
 
 ## 📝 License
 
-TBA
+This project is [MIT](LICENSE) licensed.
+
 
