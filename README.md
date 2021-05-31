@@ -1,6 +1,6 @@
 # Stay in touch
 
-> A mini social media app built with Ruby and Rails using Models, Views and Controlers.
+> A social media app built with Ruby and Rails using Models, Views and Controlers.
 
 ### Login screen 
 
@@ -79,10 +79,6 @@ Contributions, issues, and feature requests are welcome!
 
 ## Show your support
 Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-- [Micoverse team](https://www.microverse.org/)
 
 
 ## 📝 License
