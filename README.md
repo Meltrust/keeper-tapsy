@@ -43,9 +43,9 @@ https://keeper-tapsy.herokuapp.com/
 
 ### Prerequisites
 
-Ruby: 2.7.3
-Rails: 6.1
-Postgres: >=12
+- Ruby: 2.7.3
+- Rails: 6.1
+- Postgres: >=12
 
 ### Setup development environment on your machine
 
