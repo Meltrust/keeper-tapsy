@@ -6,9 +6,20 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <meta property="og:image" content="/docs/login-screen.jpg">
+
+    <meta prefix="og: http://ogp.me/ns#" property="og:title" content="Keeper-Tapsy" />
+    <meta prefix="og: http://ogp.me/ns#" property="og:description" content="Your brand new way to meet new friends." />
+    <meta prefix="og: http://ogp.me/ns#" property="og:url" content="https://keeper-tapsy.herokuapp.com" />
+    <meta prefix="og: http://ogp.me/ns#" property="og:image" content="/docs/login-screen.jpg" />  
+
+    <meta name="twitter:image" content="/docs/login-screen.jpg" />
+    <meta name="twitter:description" content="Your brand new way to meet new friends." />
+    <meta name="twitter:title" content="Keeper-Tapsy" />
+    <meta name="twitter:domain" content="https://keeper-tapsy.herokuapp.com" />
   </head>
+
   <body>
     <nav class="nav">
       <%= link_to 'Keeper Tapsy', root_path %>
