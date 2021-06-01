@@ -4,7 +4,7 @@
 
 ### Login screen 
 
-![SCREENSHOT](docs/stay-in-touch.jpg)
+![SCREENSHOT](docs/login-screen.png)
 
 ### User status
 ![SCREENSHOT](docs/screenshot-show.jpg)
