@@ -1,17 +1,17 @@
 # Keeper-tapsy
 
-> A social media app built with Ruby and Rails using Models, Views and Controlers.
+> A social media app built with Ruby and Rails under heavy development!
 
 ### Login screen 
 
 ![SCREENSHOT](docs/login-screen.png)
 
 ### User status
-![SCREENSHOT](docs/screenshot-show.jpg)
+![SCREENSHOT](docs/show.png)
 
 ### User timeline with friends
 
-![SCREENSHOT](docs/screenshot-timeline.jpg)
+![SCREENSHOT](docs/timeline.png)
 
 ## Visit keeper-tapsy now!!
 
