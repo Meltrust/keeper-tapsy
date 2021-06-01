@@ -1,6 +1,9 @@
 # Keeper-tapsy
 
-> A social media app built with Ruby and Rails under heavy development!
+> A social media app built with Ruby on Rails under heavy development!
+
+![SCREENSHOT](https://images.squarespace-cdn.com/content/v1/59ee9f6e010027bbf03e7bd1/1612314974527-S1URG8AM75RSSULWNX52/ke17ZwdGBToddI8pDm48kGzK2SrmFWofEh3Pv1eAjDxZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpwBrtT9gY1WbJNKQAnmFVwShO5fqsCZGVVzs7CT30q7oeSR5HuQ2mYCdzjdLWBvTlA/Social+Media+THUMBNAIL+for+Website+NEWS+Posts.png?format=1000w)
+
 
 ### Login screen 
 
