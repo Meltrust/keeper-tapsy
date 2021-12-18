@@ -275,6 +275,12 @@ Devise.setup do |config|
   # is mountable, there are some extra configurations to be taken into account.
   # The following options are available, assuming the engine is mounted as:
   #
+  config.warden do |manager|
+    # manager.intercept_401 = false
+    manager.strategies.add :jwt, Devise::Strategies::JWT
+    manager.default_strategies(scope: :user).unshift :jwt
+  end
+  
   #     mount MyEngine, at: '/my_engine'
   #
   # The router that invoked `devise_for`, in the example above, would be:
@@ -296,4 +302,22 @@ Devise.setup do |config|
   # When set to false, does not sign a user in automatically after their password is
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
+end
+module Devise
+  module Strategies
+  class JWT < Base
+  def valid?
+  request.headers['Authorization'].present?
+  end
+  def authenticate!
+  token = request.headers.fetch('Authorization', '').split(' ').last
+  payload = JsonWebToken.decode(token)
+  success! User.find(payload['sub'])
+  rescue ::JWT::ExpiredSignature
+  fail! 'Auth token has expired'
+  rescue ::JWT::DecodeError
+  fail! 'Auth token is invalid'
+  end
+  end
+  end
 end
