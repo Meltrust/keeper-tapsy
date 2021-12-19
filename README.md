@@ -91,6 +91,8 @@ Open `http://localhost:3000/` in your browser.
 
 ```http://localhost:3000/api/v1/posts/:post_id/comments```
 
+The post referenced by :post_id must exist.
+
 ## How to use the API (POST)
 
 ### First create a user, you can create the user using this url.
@@ -106,6 +108,8 @@ Open `http://localhost:3000/` in your browser.
 ### Now you can create a new comment by using the token you got from last step and paste it into the request.  
  
 ```http://localhost:3000/api/v1/posts/:post_id/comments```
+
+The post referenced by :post_id must exist.
 
 ![screenshot](./docs/commenting.png)
 
