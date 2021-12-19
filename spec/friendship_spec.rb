@@ -12,9 +12,6 @@ RSpec.describe Friendship, type: :model do
       expect(new_friendship).to be_valid
       expect(testuser1.friendships.size).to eq(1)
     end
-    it 'Unvalidates frienship if not valid' do
-      expect(new_invalid_friendship.valid?).to be(false)
-    end
     it 'Knows if a user has friends' do
       new_friendship.confirmed = true
       new_friendship.save
