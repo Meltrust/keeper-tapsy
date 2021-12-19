@@ -1,3 +1,5 @@
+# rubocop:disable Metrics/BlockLength
+
 RSpec.describe Friendship, type: :model do
   let(:testuser1) { User.create(name: 'testuser1', email: 'testuser1@testmail.com', password: 'password') }
   let(:testuser2) { User.create(name: 'testuser2', email: 'testuser2@testmail.com', password: 'password') }
