@@ -36,3 +36,5 @@ RSpec.describe Friendship, type: :model do
     end
   end
 end
+
+# rubocop:enable Metrics/BlockLength
