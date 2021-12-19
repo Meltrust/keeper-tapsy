@@ -1,5 +1,3 @@
-# rubocop:disable Metrics/BlockLength
-
 RSpec.describe Friendship, type: :model do
   let(:testuser1) { User.create(name: 'testuser1', email: 'testuser1@testmail.com', password: 'password') }
   let(:testuser2) { User.create(name: 'testuser2', email: 'testuser2@testmail.com', password: 'password') }
@@ -13,9 +11,6 @@ RSpec.describe Friendship, type: :model do
     it 'Validates friendship' do
       expect(new_friendship).to be_valid
       expect(testuser1.friendships.size).to eq(1)
-    end
-    it 'Unvalidates frienship if not valid' do
-      expect(new_invalid_friendship.valid?).to be(false)
     end
     it 'Knows if a user has friends' do
       new_friendship.confirmed = true
@@ -36,5 +31,3 @@ RSpec.describe Friendship, type: :model do
     end
   end
 end
-
-# rubocop:enable Metrics/BlockLength
