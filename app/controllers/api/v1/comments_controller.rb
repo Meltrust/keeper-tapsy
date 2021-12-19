@@ -13,7 +13,7 @@ class Api::V1::CommentsController < ApplicationController
     if comment.save
       render json: comment
     else
-      render plain: 'comment not created', status: :bad_request, message: 'comment not created'
+      render plain: 'error: comment not created', status: :bad_request, message: 'error: comment not created'
     end
   end
 end
