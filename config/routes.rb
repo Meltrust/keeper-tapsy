@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     namespace :v1, default: { format: :json } do
       resources :users
       resources :posts, only: %i[index create] do
-        resources :comments, only: [:index]
+        resources :comments, only: %i[index create]
       end
 
       post '/sign_in', to: 'sessions#create', as: 'user_sign_in'

@@ -16,5 +16,4 @@ class Api::V1::CommentsController < ApplicationController
       render plain: 'comment not created', status: :bad_request, message: 'comment not created'
     end
   end
-
 end

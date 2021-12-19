@@ -280,7 +280,7 @@ Devise.setup do |config|
     manager.strategies.add :jwt, Devise::Strategies::JWT
     manager.default_strategies(scope: :user).unshift :jwt
   end
-  
+
   #     mount MyEngine, at: '/my_engine'
   #
   # The router that invoked `devise_for`, in the example above, would be:
@@ -305,19 +305,20 @@ Devise.setup do |config|
 end
 module Devise
   module Strategies
-  class JWT < Base
-  def valid?
-  request.headers['Authorization'].present?
-  end
-  def authenticate!
-  token = request.headers.fetch('Authorization', '').split(' ').last
-  payload = JsonWebToken.decode(token)
-  success! User.find(payload['sub'])
-  rescue ::JWT::ExpiredSignature
-  fail! 'Auth token has expired'
-  rescue ::JWT::DecodeError
-  fail! 'Auth token is invalid'
-  end
-  end
+    class JWT < Base
+      def valid?
+        request.headers['Authorization'].present?
+      end
+
+      def authenticate!
+        token = request.headers.fetch('Authorization', '').split(' ').last
+        payload = JsonWebToken.decode(token)
+        success! User.find(payload['sub'])
+      rescue ::JWT::ExpiredSignature
+        fail! 'Auth token has expired'
+      rescue ::JWT::DecodeError
+        fail! 'Auth token is invalid'
+      end
+    end
   end
 end
